@@ -1,0 +1,489 @@
+; ModuleID = 'main'
+source_filename = "main"
+target datalayout = "e-m:w-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-pc-windows-msvc-coff"
+
+%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle = type { i8*, i32, i32 }
+%Unity.Jobs.LowLevel.Unsafe.JobRanges = type { i32, i32, i32, i32, i8*, i8* }
+%AudioAnalysis.Levels123.SterioToLMRSumJob = type { %"Unity.Collections.NativeArray`1<System.Single>", %"Unity.Collections.NativeArray`1<System.Single>", %"Unity.Collections.NativeArray`1<System.Single>", %"Unity.Collections.NativeArray`1<System.Single>" }
+%"Unity.Collections.NativeArray`1<System.Single>" = type { i8*, i32, i32, i32, %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, i8*, i32, [4 x i8] }
+
+@"Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle::CheckReadAndThrowNoEarlyOut_Injected_Ptr" = external local_unnamed_addr global void (%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle*)*
+@"Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle::CheckWriteAndThrowNoEarlyOut_Injected_Ptr" = external local_unnamed_addr global void (%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle*)*
+@"Unity.Jobs.LowLevel.Unsafe.JobsUtility::GetWorkStealingRange_Ptr" = external local_unnamed_addr global i8 (%Unity.Jobs.LowLevel.Unsafe.JobRanges*, i32, i32*, i32*)*
+@"Unity.Jobs.LowLevel.Unsafe.JobsUtility::PatchBufferMinMaxRanges_Ptr" = external local_unnamed_addr global void (i8*, i8*, i32, i32)*
+@burst.string.24f86a5a39a44534313287dd4f71339b = external global [92 x i8], align 1
+@burst.string.574c1030aa82959598669760294b70c3 = external global [64 x i8], align 1
+@burst.string.5cbf3992475a4e23c740f8bde6ec104d = external global [43 x i8], align 1
+@burst.string.5fdac9bc0f0e51b39b2048909ba1d96a = external global [91 x i8], align 1
+@burst.string.808e8e7f94567b9f878889686ba14eb1 = external global [12 x i8], align 1
+@burst.string.bc77e56f72475bcb1ba0b4d16fff9cb4 = external global [61 x i8], align 1
+@burst.string.d87a93a8334921b7fcbb19699a8ac089 = external global [86 x i8], align 1
+@burst.string.d8d0d913e7ce010c701069b8d0780129 = external global [32 x i8], align 1
+@burst_abort_Ptr = external local_unnamed_addr global void (i8*, i8*)*
+
+define dllexport void @a6db73817a59ce26c718c957cb7b9869(%AudioAnalysis.Levels123.SterioToLMRSumJob* nonnull dereferenceable(224) %jobData, i8* nocapture readnone %additionalPtr, i8* %bufferRangePatchData, %Unity.Jobs.LowLevel.Unsafe.JobRanges* nonnull dereferenceable(32) %ranges, i32 %jobIndex) local_unnamed_addr !ubaa. !3 {
+entry:
+  %var.param.handle.i.i.i69.i = alloca %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, align 8
+  %var.param.handle.i.i.i47.i = alloca %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, align 8
+  %var.param.handle.i.i.i26.i = alloca %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, align 8
+  %var.param.handle.i.i.i4.i = alloca %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, align 8
+  %var.param.handle.i.i.i.i = alloca %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, align 8
+  %var.1 = alloca i32, align 4
+  %var.0 = alloca i32, align 4
+  store i32 0, i32* %var.0, align 4
+  store i32 0, i32* %var.1, align 4
+  %0 = load i8 (%Unity.Jobs.LowLevel.Unsafe.JobRanges*, i32, i32*, i32*)*, i8 (%Unity.Jobs.LowLevel.Unsafe.JobRanges*, i32, i32*, i32*)** @"Unity.Jobs.LowLevel.Unsafe.JobsUtility::GetWorkStealingRange_Ptr", align 8, !invariant.load !2
+  %1 = call i8 %0(%Unity.Jobs.LowLevel.Unsafe.JobRanges* nonnull dereferenceable(32) %ranges, i32 %jobIndex, i32* nonnull dereferenceable(4) %var.0, i32* nonnull dereferenceable(4) %var.1)
+  %2 = icmp eq i8 %1, 0
+  br i1 %2, label %BL.0057, label %BL.0019.lr.ph
+
+BL.0019.lr.ph:                                    ; preds = %entry
+  %3 = bitcast %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData to i8*
+  %4 = load void (i8*, i8*, i32, i32)*, void (i8*, i8*, i32, i32)** @"Unity.Jobs.LowLevel.Unsafe.JobsUtility::PatchBufferMinMaxRanges_Ptr", align 8, !invariant.load !2
+  %5 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 0, i32 2
+  %6 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 0, i32 3
+  %7 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 0, i32 4
+  %8 = bitcast %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %7 to i32**
+  %9 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 0, i32 4, i32 1
+  %.elt3.i.i.i = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 0, i32 4, i32 2
+  %10 = bitcast %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i.i to i8*
+  %handle.fca.1.gep.i.i.i.i = getelementptr inbounds %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i.i, i64 0, i32 1
+  %handle.fca.2.gep.i.i.i.i = getelementptr inbounds %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i.i, i64 0, i32 2
+  %11 = bitcast %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData to float**
+  %12 = bitcast %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i4.i to i8*
+  %handle.fca.1.gep.i.i.i22.i = getelementptr inbounds %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i4.i, i64 0, i32 1
+  %handle.fca.2.gep.i.i.i23.i = getelementptr inbounds %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i4.i, i64 0, i32 2
+  %13 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 1
+  %14 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 1, i32 2
+  %15 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 1, i32 3
+  %16 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 1, i32 4
+  %17 = bitcast %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %16 to i32**
+  %18 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 1, i32 4, i32 1
+  %.elt3.i.i41.i = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 1, i32 4, i32 2
+  %19 = bitcast %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i26.i to i8*
+  %handle.fca.1.gep.i.i.i44.i = getelementptr inbounds %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i26.i, i64 0, i32 1
+  %handle.fca.2.gep.i.i.i45.i = getelementptr inbounds %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i26.i, i64 0, i32 2
+  %20 = bitcast %"Unity.Collections.NativeArray`1<System.Single>"* %13 to float**
+  %21 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 3
+  %22 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 3, i32 2
+  %23 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 3, i32 3
+  %24 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 3, i32 4
+  %25 = bitcast %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %24 to i32**
+  %26 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 3, i32 4, i32 1
+  %.elt3.i.i62.i = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 3, i32 4, i32 2
+  %27 = bitcast %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i47.i to i8*
+  %handle.fca.1.gep.i.i.i65.i = getelementptr inbounds %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i47.i, i64 0, i32 1
+  %handle.fca.2.gep.i.i.i66.i = getelementptr inbounds %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i47.i, i64 0, i32 2
+  %28 = bitcast %"Unity.Collections.NativeArray`1<System.Single>"* %21 to float**
+  %29 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 2, i32 2
+  %30 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 2, i32 3
+  %31 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 2, i32 4
+  %32 = bitcast %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %31 to i32**
+  %33 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 2, i32 4, i32 1
+  %.elt3.i.i84.i = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 2, i32 4, i32 2
+  %34 = bitcast %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i69.i to i8*
+  %handle.fca.1.gep.i.i.i87.i = getelementptr inbounds %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i69.i, i64 0, i32 1
+  %handle.fca.2.gep.i.i.i88.i = getelementptr inbounds %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle, %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i69.i, i64 0, i32 2
+  %35 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 2
+  %36 = bitcast %"Unity.Collections.NativeArray`1<System.Single>"* %35 to float**
+  %37 = load i8 (%Unity.Jobs.LowLevel.Unsafe.JobRanges*, i32, i32*, i32*)*, i8 (%Unity.Jobs.LowLevel.Unsafe.JobRanges*, i32, i32*, i32*)** @"Unity.Jobs.LowLevel.Unsafe.JobsUtility::GetWorkStealingRange_Ptr", align 8
+  %38 = bitcast %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i.i to i32**
+  %39 = bitcast %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i4.i to i32**
+  %40 = bitcast %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i26.i to i32**
+  %41 = bitcast %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i47.i to i32**
+  %42 = bitcast %Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* %var.param.handle.i.i.i69.i to i32**
+  br label %BL.0019
+
+BL.0052.loopexit.loopexit:                        ; preds = %"AudioAnalysis.Levels123.SterioToLMRSumJob.Execute(AudioAnalysis.Levels123.SterioToLMRSumJob* this, int index) -> void_051754b58184f393975c25e785730c91.exit"
+  br label %BL.0052.loopexit
+
+BL.0052.loopexit:                                 ; preds = %BL.0052.loopexit.loopexit, %BL.0019
+  %43 = call i8 %37(%Unity.Jobs.LowLevel.Unsafe.JobRanges* nonnull dereferenceable(32) %ranges, i32 %jobIndex, i32* nonnull dereferenceable(4) %var.0, i32* nonnull dereferenceable(4) %var.1)
+  %44 = icmp eq i8 %43, 0
+  br i1 %44, label %BL.0057.loopexit, label %BL.0019
+
+BL.0019:                                          ; preds = %BL.0019.lr.ph, %BL.0052.loopexit
+  %45 = load i32, i32* %var.0, align 4
+  %46 = load i32, i32* %var.1, align 4
+  %47 = sub i32 %46, %45
+  call void %4(i8* %bufferRangePatchData, i8* nonnull %3, i32 %45, i32 %47)
+  %48 = load i32, i32* %var.1, align 4
+  %49 = load i32, i32* %var.0, align 4
+  %50 = icmp slt i32 %49, %48
+  br i1 %50, label %BL.0031.lr.ph, label %BL.0052.loopexit
+
+BL.0031.lr.ph:                                    ; preds = %BL.0019
+  %51 = load i32, i32* %5, align 1
+  %52 = load i32, i32* %6, align 1
+  %53 = load i32*, i32** %8, align 1
+  %54 = load i32, i32* %9, align 1
+  %.unpack4.i.i.i = load i32, i32* %.elt3.i.i.i, align 1
+  %55 = load void (%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle*)*, void (%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle*)** @"Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle::CheckReadAndThrowNoEarlyOut_Injected_Ptr", align 8
+  %56 = load float*, float** %11, align 1
+  %57 = load i32, i32* %14, align 1
+  %58 = load i32, i32* %15, align 1
+  %59 = load i32*, i32** %17, align 1
+  %60 = load i32, i32* %18, align 1
+  %.unpack4.i.i42.i = load i32, i32* %.elt3.i.i41.i, align 1
+  %61 = load void (%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle*)*, void (%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle*)** @"Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle::CheckWriteAndThrowNoEarlyOut_Injected_Ptr", align 8
+  %62 = load float*, float** %20, align 1
+  %63 = load i32, i32* %22, align 1
+  %64 = load i32, i32* %23, align 1
+  %65 = load i32*, i32** %25, align 1
+  %66 = load i32, i32* %26, align 1
+  %.unpack4.i.i63.i = load i32, i32* %.elt3.i.i62.i, align 1
+  %67 = load float*, float** %28, align 1
+  %68 = load i32, i32* %29, align 1
+  %69 = load i32, i32* %30, align 1
+  %70 = load i32*, i32** %32, align 1
+  %71 = load i32, i32* %33, align 1
+  %.unpack4.i.i85.i = load i32, i32* %.elt3.i.i84.i, align 1
+  %72 = load float*, float** %36, align 1
+  %73 = sext i32 %49 to i64
+  %74 = sext i32 %69 to i64
+  %75 = sext i32 %64 to i64
+  %76 = sext i32 %58 to i64
+  %77 = icmp slt i32 %49, %57
+  %78 = icmp slt i32 %49, %63
+  %79 = icmp slt i32 %49, %68
+  br label %BL.0031
+
+BL.0057.loopexit:                                 ; preds = %BL.0052.loopexit
+  br label %BL.0057
+
+BL.0057:                                          ; preds = %BL.0057.loopexit, %entry
+  ret void
+
+BL.0031:                                          ; preds = %BL.0031.lr.ph, %"AudioAnalysis.Levels123.SterioToLMRSumJob.Execute(AudioAnalysis.Levels123.SterioToLMRSumJob* this, int index) -> void_051754b58184f393975c25e785730c91.exit"
+  %indvars.iv = phi i64 [ %73, %BL.0031.lr.ph ], [ %indvars.iv.next, %"AudioAnalysis.Levels123.SterioToLMRSumJob.Execute(AudioAnalysis.Levels123.SterioToLMRSumJob* this, int index) -> void_051754b58184f393975c25e785730c91.exit" ]
+  call void @llvm.experimental.noalias.scope.decl(metadata !4)
+  %80 = trunc i64 %indvars.iv to i32
+  %81 = shl i32 %80, 1
+  %82 = icmp sgt i32 %51, %81
+  %.not7.i.i.i = icmp slt i32 %52, %81
+  %or.cond = or i1 %82, %.not7.i.i.i
+  br i1 %or.cond, label %BL.001a.i.i.i, label %BL.0022.i.i.i
+
+BL.0022.i.i.i:                                    ; preds = %BL.0031
+  %83 = load i32, i32* %53, align 1
+  %84 = and i32 %83, -7
+  %.not.i.i.i = icmp eq i32 %54, %84
+  br i1 %.not.i.i.i, label %"Unity.Collections.NativeArray`1<float>.get_Item(Unity.Collections.NativeArray`1<float>* this, int index) -> float_051754b58184f393975c25e785730c91.exit.i", label %BL.004c.i.i.i
+
+BL.001a.i.i.i:                                    ; preds = %BL.0031
+  %85 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 0, i32 1
+  %86 = load i32, i32* %85, align 1, !alias.scope !4
+  %87 = icmp sgt i32 %86, -1
+  call void @llvm.assume(i1 %87)
+  %.not.i.i.i.i = icmp sgt i32 %86, %81
+  br i1 %.not.i.i.i.i, label %BL.000a.i.i.i.i, label %BL.0065.i.i.i.i
+
+BL.000a.i.i.i.i:                                  ; preds = %BL.001a.i.i.i
+  %.not2.i.i.i.i = icmp ne i32 %51, 0
+  %88 = add nsw i32 %86, -1
+  %.not9.i.i.i.i = icmp ne i32 %52, %88
+  %89 = or i1 %.not2.i.i.i.i, %.not9.i.i.i.i
+  br i1 %89, label %true.i, label %unity.burst.conditional.abort.exit
+
+true.i:                                           ; preds = %BL.000a.i.i.i.i
+  %90 = load void (i8*, i8*)*, void (i8*, i8*)** @burst_abort_Ptr, align 8
+  call void %90(i8* getelementptr inbounds ([32 x i8], [32 x i8]* @burst.string.d8d0d913e7ce010c701069b8d0780129, i64 0, i64 0), i8* getelementptr inbounds ([86 x i8], [86 x i8]* @burst.string.d87a93a8334921b7fcbb19699a8ac089, i64 0, i64 0))
+  unreachable
+
+unity.burst.conditional.abort.exit:               ; preds = %BL.000a.i.i.i.i
+  br label %BL.0065.i.i.i.i
+
+BL.0065.i.i.i.i:                                  ; preds = %unity.burst.conditional.abort.exit, %BL.001a.i.i.i
+  %91 = load void (i8*, i8*)*, void (i8*, i8*)** @burst_abort_Ptr, align 8, !invariant.load !2
+  call void %91(i8* getelementptr inbounds ([32 x i8], [32 x i8]* @burst.string.d8d0d913e7ce010c701069b8d0780129, i64 0, i64 0), i8* getelementptr inbounds ([43 x i8], [43 x i8]* @burst.string.5cbf3992475a4e23c740f8bde6ec104d, i64 0, i64 0)) #4
+  unreachable
+
+BL.004c.i.i.i:                                    ; preds = %BL.0022.i.i.i
+  call void @llvm.lifetime.start.p0i8(i64 16, i8* nonnull %10), !noalias !4
+  store i32* %53, i32** %38, align 8, !noalias !4
+  store i32 %54, i32* %handle.fca.1.gep.i.i.i.i, align 8, !noalias !4
+  store i32 %.unpack4.i.i.i, i32* %handle.fca.2.gep.i.i.i.i, align 4, !noalias !4
+  call void %55(%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* nocapture nonnull readonly dereferenceable(16) %var.param.handle.i.i.i.i) #5, !noalias !4
+  call void @llvm.lifetime.end.p0i8(i64 16, i8* nonnull %10), !noalias !4
+  br label %"Unity.Collections.NativeArray`1<float>.get_Item(Unity.Collections.NativeArray`1<float>* this, int index) -> float_051754b58184f393975c25e785730c91.exit.i"
+
+"Unity.Collections.NativeArray`1<float>.get_Item(Unity.Collections.NativeArray`1<float>* this, int index) -> float_051754b58184f393975c25e785730c91.exit.i": ; preds = %BL.004c.i.i.i, %BL.0022.i.i.i
+  %92 = sext i32 %81 to i64
+  %93 = getelementptr float, float* %56, i64 %92
+  %94 = load float, float* %93, align 1
+  %95 = or i32 %81, 1
+  %96 = icmp sgt i32 %51, %95
+  %.not7.i.i5.i = icmp slt i32 %52, %95
+  %or.cond.i = or i1 %96, %.not7.i.i5.i
+  br i1 %or.cond.i, label %BL.001a.i.i10.i, label %BL.0022.i.i8.i
+
+BL.0022.i.i8.i:                                   ; preds = %"Unity.Collections.NativeArray`1<float>.get_Item(Unity.Collections.NativeArray`1<float>* this, int index) -> float_051754b58184f393975c25e785730c91.exit.i"
+  br i1 %.not.i.i.i, label %"Unity.Collections.NativeArray`1<float>.get_Item(Unity.Collections.NativeArray`1<float>* this, int index) -> float_051754b58184f393975c25e785730c91.exit25.i", label %BL.004c.i.i24.i
+
+BL.001a.i.i10.i:                                  ; preds = %"Unity.Collections.NativeArray`1<float>.get_Item(Unity.Collections.NativeArray`1<float>* this, int index) -> float_051754b58184f393975c25e785730c91.exit.i"
+  %97 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 0, i32 1
+  %98 = load i32, i32* %97, align 1, !alias.scope !4
+  %99 = icmp sgt i32 %98, -1
+  call void @llvm.assume(i1 %99)
+  %.not.i.i.i9.i = icmp sgt i32 %98, %95
+  br i1 %.not.i.i.i9.i, label %BL.000a.i.i.i12.i, label %BL.0065.i.i.i15.i
+
+BL.000a.i.i.i12.i:                                ; preds = %BL.001a.i.i10.i
+  %.not2.i.i.i11.i = icmp ne i32 %51, 0
+  %100 = add nsw i32 %98, -1
+  %.not9.i.i.i13.i = icmp ne i32 %52, %100
+  %101 = or i1 %.not2.i.i.i11.i, %.not9.i.i.i13.i
+  br i1 %101, label %true.i188, label %unity.burst.conditional.abort.exit189
+
+true.i188:                                        ; preds = %BL.000a.i.i.i12.i
+  %102 = load void (i8*, i8*)*, void (i8*, i8*)** @burst_abort_Ptr, align 8
+  call void %102(i8* getelementptr inbounds ([32 x i8], [32 x i8]* @burst.string.d8d0d913e7ce010c701069b8d0780129, i64 0, i64 0), i8* getelementptr inbounds ([86 x i8], [86 x i8]* @burst.string.d87a93a8334921b7fcbb19699a8ac089, i64 0, i64 0))
+  unreachable
+
+unity.burst.conditional.abort.exit189:            ; preds = %BL.000a.i.i.i12.i
+  br label %BL.0065.i.i.i15.i
+
+BL.0065.i.i.i15.i:                                ; preds = %unity.burst.conditional.abort.exit189, %BL.001a.i.i10.i
+  %103 = load void (i8*, i8*)*, void (i8*, i8*)** @burst_abort_Ptr, align 8, !invariant.load !2
+  call void %103(i8* getelementptr inbounds ([32 x i8], [32 x i8]* @burst.string.d8d0d913e7ce010c701069b8d0780129, i64 0, i64 0), i8* getelementptr inbounds ([43 x i8], [43 x i8]* @burst.string.5cbf3992475a4e23c740f8bde6ec104d, i64 0, i64 0)) #4
+  unreachable
+
+BL.004c.i.i24.i:                                  ; preds = %BL.0022.i.i8.i
+  call void @llvm.lifetime.start.p0i8(i64 16, i8* nonnull %12), !noalias !4
+  store i32* %53, i32** %39, align 8, !noalias !4
+  store i32 %54, i32* %handle.fca.1.gep.i.i.i22.i, align 8, !noalias !4
+  store i32 %.unpack4.i.i.i, i32* %handle.fca.2.gep.i.i.i23.i, align 4, !noalias !4
+  call void %55(%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* nocapture nonnull readonly dereferenceable(16) %var.param.handle.i.i.i4.i) #5, !noalias !4
+  call void @llvm.lifetime.end.p0i8(i64 16, i8* nonnull %12), !noalias !4
+  br label %"Unity.Collections.NativeArray`1<float>.get_Item(Unity.Collections.NativeArray`1<float>* this, int index) -> float_051754b58184f393975c25e785730c91.exit25.i"
+
+"Unity.Collections.NativeArray`1<float>.get_Item(Unity.Collections.NativeArray`1<float>* this, int index) -> float_051754b58184f393975c25e785730c91.exit25.i": ; preds = %BL.004c.i.i24.i, %BL.0022.i.i8.i
+  %104 = sext i32 %95 to i64
+  %105 = getelementptr float, float* %56, i64 %104
+  %106 = load float, float* %105, align 1
+  %.not7.i.i27.i = icmp sgt i64 %indvars.iv, %76
+  %or.cond55 = or i1 %77, %.not7.i.i27.i
+  br i1 %or.cond55, label %BL.001a.i.i32.i, label %BL.0022.i.i30.i
+
+BL.0022.i.i30.i:                                  ; preds = %"Unity.Collections.NativeArray`1<float>.get_Item(Unity.Collections.NativeArray`1<float>* this, int index) -> float_051754b58184f393975c25e785730c91.exit25.i"
+  %107 = load i32, i32* %59, align 1
+  %108 = and i32 %107, -6
+  %.not.i.i29.i = icmp eq i32 %60, %108
+  br i1 %.not.i.i29.i, label %"Unity.Collections.NativeArray`1<float>.set_Item(Unity.Collections.NativeArray`1<float>* this, int index, float value) -> void_051754b58184f393975c25e785730c91.exit.i", label %BL.004c.i.i46.i
+
+BL.001a.i.i32.i:                                  ; preds = %"Unity.Collections.NativeArray`1<float>.get_Item(Unity.Collections.NativeArray`1<float>* this, int index) -> float_051754b58184f393975c25e785730c91.exit25.i"
+  %109 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 1, i32 1
+  %110 = load i32, i32* %109, align 1, !alias.scope !4
+  %111 = icmp sgt i32 %110, -1
+  call void @llvm.assume(i1 %111)
+  %.not.i.i.i31.i = icmp sgt i32 %110, %80
+  br i1 %.not.i.i.i31.i, label %BL.000a.i.i.i34.i, label %BL.0065.i.i.i37.i
+
+BL.000a.i.i.i34.i:                                ; preds = %BL.001a.i.i32.i
+  %.not2.i.i.i33.i = icmp ne i32 %57, 0
+  %112 = add nsw i32 %110, -1
+  %.not9.i.i.i35.i = icmp ne i32 %58, %112
+  %113 = or i1 %.not2.i.i.i33.i, %.not9.i.i.i35.i
+  br i1 %113, label %true.i190, label %unity.burst.conditional.abort.exit191
+
+true.i190:                                        ; preds = %BL.000a.i.i.i34.i
+  %114 = load void (i8*, i8*)*, void (i8*, i8*)** @burst_abort_Ptr, align 8
+  call void %114(i8* getelementptr inbounds ([32 x i8], [32 x i8]* @burst.string.d8d0d913e7ce010c701069b8d0780129, i64 0, i64 0), i8* getelementptr inbounds ([86 x i8], [86 x i8]* @burst.string.d87a93a8334921b7fcbb19699a8ac089, i64 0, i64 0))
+  unreachable
+
+unity.burst.conditional.abort.exit191:            ; preds = %BL.000a.i.i.i34.i
+  br label %BL.0065.i.i.i37.i
+
+BL.0065.i.i.i37.i:                                ; preds = %unity.burst.conditional.abort.exit191, %BL.001a.i.i32.i
+  %115 = load void (i8*, i8*)*, void (i8*, i8*)** @burst_abort_Ptr, align 8, !invariant.load !2
+  call void %115(i8* getelementptr inbounds ([32 x i8], [32 x i8]* @burst.string.d8d0d913e7ce010c701069b8d0780129, i64 0, i64 0), i8* getelementptr inbounds ([43 x i8], [43 x i8]* @burst.string.5cbf3992475a4e23c740f8bde6ec104d, i64 0, i64 0)) #4
+  unreachable
+
+BL.004c.i.i46.i:                                  ; preds = %BL.0022.i.i30.i
+  call void @llvm.lifetime.start.p0i8(i64 16, i8* nonnull %19), !noalias !4
+  store i32* %59, i32** %40, align 8, !noalias !4
+  store i32 %60, i32* %handle.fca.1.gep.i.i.i44.i, align 8, !noalias !4
+  store i32 %.unpack4.i.i42.i, i32* %handle.fca.2.gep.i.i.i45.i, align 4, !noalias !4
+  call void %61(%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* nocapture nonnull readonly dereferenceable(16) %var.param.handle.i.i.i26.i) #5, !noalias !4
+  call void @llvm.lifetime.end.p0i8(i64 16, i8* nonnull %19), !noalias !4
+  br label %"Unity.Collections.NativeArray`1<float>.set_Item(Unity.Collections.NativeArray`1<float>* this, int index, float value) -> void_051754b58184f393975c25e785730c91.exit.i"
+
+"Unity.Collections.NativeArray`1<float>.set_Item(Unity.Collections.NativeArray`1<float>* this, int index, float value) -> void_051754b58184f393975c25e785730c91.exit.i": ; preds = %BL.004c.i.i46.i, %BL.0022.i.i30.i
+  %116 = getelementptr float, float* %62, i64 %indvars.iv
+  store float %94, float* %116, align 1
+  %.not7.i.i48.i = icmp sgt i64 %indvars.iv, %75
+  %or.cond57 = or i1 %78, %.not7.i.i48.i
+  br i1 %or.cond57, label %BL.001a.i.i53.i, label %BL.0022.i.i51.i
+
+BL.0022.i.i51.i:                                  ; preds = %"Unity.Collections.NativeArray`1<float>.set_Item(Unity.Collections.NativeArray`1<float>* this, int index, float value) -> void_051754b58184f393975c25e785730c91.exit.i"
+  %117 = load i32, i32* %65, align 1
+  %118 = and i32 %117, -6
+  %.not.i.i50.i = icmp eq i32 %66, %118
+  br i1 %.not.i.i50.i, label %"Unity.Collections.NativeArray`1<float>.set_Item(Unity.Collections.NativeArray`1<float>* this, int index, float value) -> void_051754b58184f393975c25e785730c91.exit68.i", label %BL.004c.i.i67.i
+
+BL.001a.i.i53.i:                                  ; preds = %"Unity.Collections.NativeArray`1<float>.set_Item(Unity.Collections.NativeArray`1<float>* this, int index, float value) -> void_051754b58184f393975c25e785730c91.exit.i"
+  %119 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 3, i32 1
+  %120 = load i32, i32* %119, align 1, !alias.scope !4
+  %121 = icmp sgt i32 %120, -1
+  call void @llvm.assume(i1 %121)
+  %.not.i.i.i52.i = icmp sgt i32 %120, %80
+  br i1 %.not.i.i.i52.i, label %BL.000a.i.i.i55.i, label %BL.0065.i.i.i58.i
+
+BL.000a.i.i.i55.i:                                ; preds = %BL.001a.i.i53.i
+  %.not2.i.i.i54.i = icmp ne i32 %63, 0
+  %122 = add nsw i32 %120, -1
+  %.not9.i.i.i56.i = icmp ne i32 %64, %122
+  %123 = or i1 %.not2.i.i.i54.i, %.not9.i.i.i56.i
+  br i1 %123, label %true.i192, label %unity.burst.conditional.abort.exit193
+
+true.i192:                                        ; preds = %BL.000a.i.i.i55.i
+  %124 = load void (i8*, i8*)*, void (i8*, i8*)** @burst_abort_Ptr, align 8
+  call void %124(i8* getelementptr inbounds ([32 x i8], [32 x i8]* @burst.string.d8d0d913e7ce010c701069b8d0780129, i64 0, i64 0), i8* getelementptr inbounds ([86 x i8], [86 x i8]* @burst.string.d87a93a8334921b7fcbb19699a8ac089, i64 0, i64 0))
+  unreachable
+
+unity.burst.conditional.abort.exit193:            ; preds = %BL.000a.i.i.i55.i
+  br label %BL.0065.i.i.i58.i
+
+BL.0065.i.i.i58.i:                                ; preds = %unity.burst.conditional.abort.exit193, %BL.001a.i.i53.i
+  %125 = load void (i8*, i8*)*, void (i8*, i8*)** @burst_abort_Ptr, align 8, !invariant.load !2
+  call void %125(i8* getelementptr inbounds ([32 x i8], [32 x i8]* @burst.string.d8d0d913e7ce010c701069b8d0780129, i64 0, i64 0), i8* getelementptr inbounds ([43 x i8], [43 x i8]* @burst.string.5cbf3992475a4e23c740f8bde6ec104d, i64 0, i64 0)) #4
+  unreachable
+
+BL.004c.i.i67.i:                                  ; preds = %BL.0022.i.i51.i
+  call void @llvm.lifetime.start.p0i8(i64 16, i8* nonnull %27), !noalias !4
+  store i32* %65, i32** %41, align 8, !noalias !4
+  store i32 %66, i32* %handle.fca.1.gep.i.i.i65.i, align 8, !noalias !4
+  store i32 %.unpack4.i.i63.i, i32* %handle.fca.2.gep.i.i.i66.i, align 4, !noalias !4
+  call void %61(%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* nocapture nonnull readonly dereferenceable(16) %var.param.handle.i.i.i47.i) #5, !noalias !4
+  call void @llvm.lifetime.end.p0i8(i64 16, i8* nonnull %27), !noalias !4
+  br label %"Unity.Collections.NativeArray`1<float>.set_Item(Unity.Collections.NativeArray`1<float>* this, int index, float value) -> void_051754b58184f393975c25e785730c91.exit68.i"
+
+"Unity.Collections.NativeArray`1<float>.set_Item(Unity.Collections.NativeArray`1<float>* this, int index, float value) -> void_051754b58184f393975c25e785730c91.exit68.i": ; preds = %BL.004c.i.i67.i, %BL.0022.i.i51.i
+  %126 = getelementptr float, float* %67, i64 %indvars.iv
+  store float %106, float* %126, align 1
+  %.not7.i.i70.i = icmp sgt i64 %indvars.iv, %74
+  %or.cond59 = or i1 %79, %.not7.i.i70.i
+  br i1 %or.cond59, label %BL.001a.i.i75.i, label %BL.0022.i.i73.i
+
+BL.0022.i.i73.i:                                  ; preds = %"Unity.Collections.NativeArray`1<float>.set_Item(Unity.Collections.NativeArray`1<float>* this, int index, float value) -> void_051754b58184f393975c25e785730c91.exit68.i"
+  %127 = load i32, i32* %70, align 1
+  %128 = and i32 %127, -6
+  %.not.i.i72.i = icmp eq i32 %71, %128
+  br i1 %.not.i.i72.i, label %"AudioAnalysis.Levels123.SterioToLMRSumJob.Execute(AudioAnalysis.Levels123.SterioToLMRSumJob* this, int index) -> void_051754b58184f393975c25e785730c91.exit", label %BL.004c.i.i89.i
+
+BL.001a.i.i75.i:                                  ; preds = %"Unity.Collections.NativeArray`1<float>.set_Item(Unity.Collections.NativeArray`1<float>* this, int index, float value) -> void_051754b58184f393975c25e785730c91.exit68.i"
+  %129 = getelementptr %AudioAnalysis.Levels123.SterioToLMRSumJob, %AudioAnalysis.Levels123.SterioToLMRSumJob* %jobData, i64 0, i32 2, i32 1
+  %130 = load i32, i32* %129, align 1, !alias.scope !4
+  %131 = icmp sgt i32 %130, -1
+  call void @llvm.assume(i1 %131)
+  %.not.i.i.i74.i = icmp sgt i32 %130, %80
+  br i1 %.not.i.i.i74.i, label %BL.000a.i.i.i77.i, label %BL.0065.i.i.i80.i
+
+BL.000a.i.i.i77.i:                                ; preds = %BL.001a.i.i75.i
+  %.not2.i.i.i76.i = icmp ne i32 %68, 0
+  %132 = add nsw i32 %130, -1
+  %.not9.i.i.i78.i = icmp ne i32 %69, %132
+  %133 = or i1 %.not2.i.i.i76.i, %.not9.i.i.i78.i
+  br i1 %133, label %true.i194, label %unity.burst.conditional.abort.exit195
+
+true.i194:                                        ; preds = %BL.000a.i.i.i77.i
+  %134 = load void (i8*, i8*)*, void (i8*, i8*)** @burst_abort_Ptr, align 8
+  call void %134(i8* getelementptr inbounds ([32 x i8], [32 x i8]* @burst.string.d8d0d913e7ce010c701069b8d0780129, i64 0, i64 0), i8* getelementptr inbounds ([86 x i8], [86 x i8]* @burst.string.d87a93a8334921b7fcbb19699a8ac089, i64 0, i64 0))
+  unreachable
+
+unity.burst.conditional.abort.exit195:            ; preds = %BL.000a.i.i.i77.i
+  br label %BL.0065.i.i.i80.i
+
+BL.0065.i.i.i80.i:                                ; preds = %unity.burst.conditional.abort.exit195, %BL.001a.i.i75.i
+  %135 = load void (i8*, i8*)*, void (i8*, i8*)** @burst_abort_Ptr, align 8, !invariant.load !2
+  call void %135(i8* getelementptr inbounds ([32 x i8], [32 x i8]* @burst.string.d8d0d913e7ce010c701069b8d0780129, i64 0, i64 0), i8* getelementptr inbounds ([43 x i8], [43 x i8]* @burst.string.5cbf3992475a4e23c740f8bde6ec104d, i64 0, i64 0)) #4
+  unreachable
+
+BL.004c.i.i89.i:                                  ; preds = %BL.0022.i.i73.i
+  call void @llvm.lifetime.start.p0i8(i64 16, i8* nonnull %34), !noalias !4
+  store i32* %70, i32** %42, align 8, !noalias !4
+  store i32 %71, i32* %handle.fca.1.gep.i.i.i87.i, align 8, !noalias !4
+  store i32 %.unpack4.i.i85.i, i32* %handle.fca.2.gep.i.i.i88.i, align 4, !noalias !4
+  call void %61(%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle* nocapture nonnull readonly dereferenceable(16) %var.param.handle.i.i.i69.i) #5, !noalias !4
+  call void @llvm.lifetime.end.p0i8(i64 16, i8* nonnull %34), !noalias !4
+  br label %"AudioAnalysis.Levels123.SterioToLMRSumJob.Execute(AudioAnalysis.Levels123.SterioToLMRSumJob* this, int index) -> void_051754b58184f393975c25e785730c91.exit"
+
+"AudioAnalysis.Levels123.SterioToLMRSumJob.Execute(AudioAnalysis.Levels123.SterioToLMRSumJob* this, int index) -> void_051754b58184f393975c25e785730c91.exit": ; preds = %BL.0022.i.i73.i, %BL.004c.i.i89.i
+  %136 = fadd float %94, %106
+  %137 = getelementptr float, float* %72, i64 %indvars.iv
+  store float %136, float* %137, align 1
+  %indvars.iv.next = add nsw i64 %indvars.iv, 1
+  %lftr.wideiv = trunc i64 %indvars.iv.next to i32
+  %exitcond.not = icmp eq i32 %48, %lftr.wideiv
+  br i1 %exitcond.not, label %BL.0052.loopexit.loopexit, label %BL.0031
+}
+
+define dllexport void @burst.initialize(i8* (i8*)* nocapture %callback) local_unnamed_addr !ubaa. !1 {
+entry:
+  %0 = tail call i8* %callback(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @burst.string.808e8e7f94567b9f878889686ba14eb1, i64 0, i64 0))
+  store i8* %0, i8** bitcast (void (i8*, i8*)** @burst_abort_Ptr to i8**), align 8
+  %1 = tail call i8* %callback(i8* getelementptr inbounds ([61 x i8], [61 x i8]* @burst.string.bc77e56f72475bcb1ba0b4d16fff9cb4, i64 0, i64 0))
+  store i8* %1, i8** bitcast (i8 (%Unity.Jobs.LowLevel.Unsafe.JobRanges*, i32, i32*, i32*)** @"Unity.Jobs.LowLevel.Unsafe.JobsUtility::GetWorkStealingRange_Ptr" to i8**), align 8
+  %2 = tail call i8* %callback(i8* getelementptr inbounds ([64 x i8], [64 x i8]* @burst.string.574c1030aa82959598669760294b70c3, i64 0, i64 0))
+  store i8* %2, i8** bitcast (void (i8*, i8*, i32, i32)** @"Unity.Jobs.LowLevel.Unsafe.JobsUtility::PatchBufferMinMaxRanges_Ptr" to i8**), align 8
+  %3 = tail call i8* %callback(i8* getelementptr inbounds ([91 x i8], [91 x i8]* @burst.string.5fdac9bc0f0e51b39b2048909ba1d96a, i64 0, i64 0))
+  store i8* %3, i8** bitcast (void (%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle*)** @"Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle::CheckReadAndThrowNoEarlyOut_Injected_Ptr" to i8**), align 8
+  %4 = tail call i8* %callback(i8* getelementptr inbounds ([92 x i8], [92 x i8]* @burst.string.24f86a5a39a44534313287dd4f71339b, i64 0, i64 0))
+  store i8* %4, i8** bitcast (void (%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle*)** @"Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle::CheckWriteAndThrowNoEarlyOut_Injected_Ptr" to i8**), align 8
+  ret void
+}
+
+define dllexport void @burst.initialize.externals(i8* (i8*)* nocapture %callback) local_unnamed_addr !ubaa. !1 {
+entry:
+  %0 = tail call i8* %callback(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @burst.string.808e8e7f94567b9f878889686ba14eb1, i64 0, i64 0))
+  store i8* %0, i8** bitcast (void (i8*, i8*)** @burst_abort_Ptr to i8**), align 8
+  %1 = tail call i8* %callback(i8* getelementptr inbounds ([61 x i8], [61 x i8]* @burst.string.bc77e56f72475bcb1ba0b4d16fff9cb4, i64 0, i64 0))
+  store i8* %1, i8** bitcast (i8 (%Unity.Jobs.LowLevel.Unsafe.JobRanges*, i32, i32*, i32*)** @"Unity.Jobs.LowLevel.Unsafe.JobsUtility::GetWorkStealingRange_Ptr" to i8**), align 8
+  %2 = tail call i8* %callback(i8* getelementptr inbounds ([64 x i8], [64 x i8]* @burst.string.574c1030aa82959598669760294b70c3, i64 0, i64 0))
+  store i8* %2, i8** bitcast (void (i8*, i8*, i32, i32)** @"Unity.Jobs.LowLevel.Unsafe.JobsUtility::PatchBufferMinMaxRanges_Ptr" to i8**), align 8
+  %3 = tail call i8* %callback(i8* getelementptr inbounds ([91 x i8], [91 x i8]* @burst.string.5fdac9bc0f0e51b39b2048909ba1d96a, i64 0, i64 0))
+  store i8* %3, i8** bitcast (void (%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle*)** @"Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle::CheckReadAndThrowNoEarlyOut_Injected_Ptr" to i8**), align 8
+  %4 = tail call i8* %callback(i8* getelementptr inbounds ([92 x i8], [92 x i8]* @burst.string.24f86a5a39a44534313287dd4f71339b, i64 0, i64 0))
+  store i8* %4, i8** bitcast (void (%Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle*)** @"Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle::CheckWriteAndThrowNoEarlyOut_Injected_Ptr" to i8**), align 8
+  ret void
+}
+
+; Function Attrs: norecurse readnone willreturn
+define dllexport void @burst.initialize.statics() local_unnamed_addr #0 !ubaa. !2 {
+entry:
+  ret void
+}
+
+; Function Attrs: nofree nosync nounwind strictfp willreturn
+declare void @llvm.assume(i1 noundef) #1
+
+; Function Attrs: inaccessiblememonly nofree nosync nounwind strictfp willreturn
+declare void @llvm.experimental.noalias.scope.decl(metadata) #2
+
+; Function Attrs: argmemonly nofree nosync nounwind strictfp willreturn
+declare void @llvm.lifetime.end.p0i8(i64 immarg, i8* nocapture) #3
+
+; Function Attrs: argmemonly nofree nosync nounwind strictfp willreturn
+declare void @llvm.lifetime.start.p0i8(i64 immarg, i8* nocapture) #3
+
+attributes #0 = { norecurse readnone willreturn }
+attributes #1 = { nofree nosync nounwind strictfp willreturn }
+attributes #2 = { inaccessiblememonly nofree nosync nounwind strictfp willreturn }
+attributes #3 = { argmemonly nofree nosync nounwind strictfp willreturn }
+attributes #4 = { cold }
+attributes #5 = { argmemonly }
+
+!ubaa.Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle = !{!0, !0, !0, !0}
+!ubaa.AudioAnalysis.Levels123.SterioToLMRSumJob = !{!1, !0, !0, !0, !0}
+!ubaa.Unity.Collections.NativeArray\601\3CSystem.Single\3E = !{!0, !0, !1, !1, !1, !0, !1, !1, !1}
+!ubaa.Unity.Jobs.LowLevel.Unsafe.JobRanges = !{!1, !1, !1, !1, !1, !1, !1}
+!burst.invariant = !{!2}
+
+!0 = !{i1 true}
+!1 = !{i1 false}
+!2 = !{}
+!3 = !{i1 false, i1 false, i1 false, i1 false, i1 false}
+!4 = !{!5}
+!5 = distinct !{!5, !6, !"AudioAnalysis.Levels123.SterioToLMRSumJob.Execute(AudioAnalysis.Levels123.SterioToLMRSumJob* this, int index) -> void_051754b58184f393975c25e785730c91: %this"}
+!6 = distinct !{!6, !"AudioAnalysis.Levels123.SterioToLMRSumJob.Execute(AudioAnalysis.Levels123.SterioToLMRSumJob* this, int index) -> void_051754b58184f393975c25e785730c91"}
